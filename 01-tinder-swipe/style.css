@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+  user-select: none;
+  background: #e5e5e5;
+}
+
+main {
+  background: url("./imagenes/iphone.webp") no-repeat;
+  background-size: contain;
+  width: 320px;
+  height: 640px;
+  display: flex;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+section {
+  background: #f6f6f6;
+  width: 100%;
+  border-radius: 36px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  padding: 16px 6px;
+  margin: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Esto & img en el header es como haer "header img{}" */
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 0 24px;
+  justify-content: center;
+  align-items: center;
+
+  & button {
+    background: url("./imagenes/tinder-icons.webp") no-repeat;
+    background-position: 0px 0px;
+    background-size: 175px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    transition: scale 0.3s ease;
+
+    &:hover {
+      scale: 1.4;
+    }
+
+    &.is-big {
+      background-size: 250px;
+      width: 48px;
+      height: 48px;
+    }
+
+    &.is-undo {
+      background-position: -140px 0;
+    }
+
+    &.is-remove {
+      background-position: -150px 0;
+    }
+
+    &.is-star {
+      background-position: -69px;
+    }
+
+    &.is-fav {
+      background-position: -49px;
+    }
+  }
+}
+
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  & article {
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: grab;
+    overflow: hidden;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    & h2 {
+      color: white;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      height: 100%;
+      padding: 16px;
+      z-index: 3;
+      background: linear-gradient(0deg, #00000088 20%, transparent 40%);
+    }
+
+    & span {
+      margin-left: 6px;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+  }
+}
